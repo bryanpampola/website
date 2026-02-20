@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PinoySoftDev IT Solutions</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --blue: #0050b3;
+        --red: #d72631;
+        --yellow: #ffd600;
+        --white: #fff;
+        --gray: #f7f7f7;
+        --text: #222;
+      }
+      body {
+        margin: 0;
+        font-family: "Montserrat", Arial, sans-serif;
+        background: var(--white);
+        color: var(--text);
+        line-height: 1.6;
+      }
+      header {
+        background: var(--white);
+        padding: 2rem 0 1rem 0;
+        text-align: center;
+        border-bottom: 1px solid var(--gray);
+      }
+      header img {
+        width: 90px;
+        margin-bottom: 0.5rem;
+      }
+      header h1 {
+        margin: 0;
+        font-size: 2.2rem;
+        color: var(--blue);
+        letter-spacing: 2px;
+      }
+      header p {
+        margin: 0.2rem 0 0 0;
+        color: var(--red);
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+      nav {
+        margin: 1.5rem 0 0 0;
+      }
+      nav a {
+        color: var(--blue);
+        text-decoration: none;
+        margin: 0 1.2rem;
+        font-weight: 500;
+        font-size: 1rem;
+        transition: color 0.2s;
+      }
+      nav a:hover {
+        color: var(--red);
+      }
+      .container {
+        max-width: 900px;
+        margin: 2.5rem auto;
+        padding: 0 1.5rem;
+      }
+      .hero {
+        position: relative;
+        text-align: center;
+        padding: 5rem 0 3rem 0;
+        background: var(--gray);
+        border-radius: 1.5rem;
+        margin-bottom: 2.5rem;
+        overflow: hidden;
+        min-height: 420px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        /* background:
+          radial-gradient(
+            circle at 70% 30%,
+            rgba(255, 214, 0, 0.08) 0,
+            transparent 60%
+          ),
+          radial-gradient(
+            circle at 30% 70%,
+            rgba(0, 80, 179, 0.1) 0,
+            transparent 70%
+          ),
+          linear-gradient(120deg, rgba(215, 38, 49, 0.08) 0%, transparent 80%); */
+        z-index: 1;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      .hero-logo {
+        width: 110px;
+        margin-bottom: 1.2rem;
+        filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.06));
+      }
+      .hero h2 {
+        font-size: 2.2rem;
+        color: var(--blue);
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+      .hero p {
+        font-size: 1.2rem;
+        color: #444;
+        margin-bottom: 1.7rem;
+      }
+      .btn {
+        background: var(--red);
+        color: var(--white);
+        padding: 0.9rem 2.2rem;
+        border: none;
+        border-radius: 2rem;
+        font-size: 1.1rem;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 4px 16px rgba(215, 38, 49, 0.1);
+        transition:
+          background 0.2s,
+          box-shadow 0.2s;
+      }
+      .btn:hover {
+        background: var(--blue);
+        box-shadow: 0 6px 24px rgba(0, 80, 179, 0.13);
+      }
+      section {
+        margin-bottom: 3rem;
+      }
+      section h3 {
+        color: var(--blue);
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        letter-spacing: 1px;
+      }
+      .services {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: space-between;
+      }
+      .service-card {
+        background: var(--white);
+        border: 1px solid var(--gray);
+        border-radius: 1rem;
+        flex: 1 1 250px;
+        padding: 2rem 1.2rem;
+        min-width: 220px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        transition: box-shadow 0.2s;
+      }
+      .service-card:hover {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+      }
+      .service-card h4 {
+        color: var(--red);
+        margin-top: 0;
+        margin-bottom: 0.7rem;
+        font-size: 1.1rem;
+      }
+      .service-card p {
+        margin: 0;
+        color: #444;
+        font-size: 1rem;
+      }
+      .about {
+        background: var(--gray);
+        border-radius: 1rem;
+        padding: 2rem 1.5rem;
+      }
+      .about strong {
+        color: var(--red);
+      }
+      form {
+        background: var(--white);
+        border: 1px solid var(--gray);
+        border-radius: 1rem;
+        padding: 2rem 1.5rem;
+        max-width: 500px;
+        margin: 0 auto;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      }
+      form label {
+        display: block;
+        margin-bottom: 0.3rem;
+        color: var(--blue);
+        font-weight: 600;
+      }
+      form input,
+      form textarea {
+        width: 100%;
+        padding: 0.7rem;
+        margin-bottom: 1.2rem;
+        border: 1px solid var(--gray);
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        background: var(--gray);
+        resize: vertical;
+      }
+      form button {
+        width: 100%;
+      }
+      .footer {
+        text-align: center;
+        padding: 2rem 0 1rem 0;
+        border-top: 1px solid var(--gray);
+        margin-top: 3rem;
+        background: var(--white);
+      }
+      .footer img {
+        width: 90px;
+        margin-bottom: 0.5rem;
+      }
+      .footer p {
+        margin: 0;
+        color: #888;
+        font-size: 0.95rem;
+      }
+      @media (max-width: 700px) {
+        .services {
+          flex-direction: column;
+          gap: 1.2rem;
+        }
+        .container {
+          padding: 0 0.5rem;
+        }
+        .hero {
+          padding: 2.5rem 0 1.5rem 0;
+          min-height: 320px;
+        }
+        .hero-logo {
+          width: 70px;
+        }
+        .hero h2 {
+          font-size: 1.3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="logo-pinoysoftdev.png" alt="PinoySoftDev Logo" />
+      <h1>PINOYSOFTDEV</h1>
+      <p>IT SOLUTIONS</p>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+    <div class="container">
+      <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+          <!-- <img src="logo.png" alt="PinoySoftDev Logo" class="hero-logo" /> -->
+          <h2>Empowering Philippine Businesses with Innovative IT Solutions</h2>
+          <p>
+            PinoySoftDev delivers world-class software, web, and IT services
+            tailored for Filipino enterprises and startups.
+          </p>
+          <a href="#contact" class="btn">Get Started</a>
+        </div>
+      </section>
+      <section id="about" class="about">
+        <h3>About Us</h3>
+        <p>
+          <strong>PinoySoftDev IT Solutions</strong> is a Filipino-owned
+          software company dedicated to helping local businesses thrive in the
+          digital age. Our team combines technical expertise with a deep
+          understanding of the Philippine market, delivering solutions that are
+          reliable, scalable, and proudly Pinoy.
+        </p>
+      </section>
+      <section id="services">
+        <h3 style="margin-left: 18px">Our Services</h3>
+        <div class="services">
+          <div class="service-card">
+            <h4>Systems Development</h4>
+            <p>
+              Structured process of creating, modifying, or maintaining software
+              and information systems, involving stages like planning, analysis,
+              design, coding, testing, and maintenance to ensure the final
+              product meets specific business needs.
+            </p>
+          </div>
+          <div class="service-card">
+            <h4>Business Processing</h4>
+            <p>
+              Disciplined and systematically designing, modeling, executing,
+              monitoring, and optimizing business processes for efficiency,
+              consistency, and improvement.
+            </p>
+          </div>
+          <div class="service-card">
+            <h4>Software Architecture</h4>
+            <p>
+              High-level blueprint defining a system's fundamental structure,
+              components, their relationships, and guiding principles, ensuring
+              it meets functional (what it does) and non-functional (how well it
+              does it, e.g., scalability, security, performance) requirements,
+              acting as a roadmap for development and evolution
+            </p>
+          </div>
+          <div class="service-card">
+            <h4>IT Consulting</h4>
+            <p>
+              Expert advice and solutions to optimize your IT infrastructure and
+              processes. We analyze your current setup, identify areas for
+              improvement, and provide strategic recommendations to enhance
+              efficiency, security, and scalability.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="contact">
+        <h3 style="margin-left: 30px">Contact Us</h3>
+        <form
+        method="POST"
+        action="https://script.google.com/macros/s/AKfycbz1EOTaklfBa7q0Vj6TbLlv65W5Xb-GAknMlV76gpOg9-7dbFKUlEJ3v-M5fJIm2uuo/exec"
+        >
+          <label for="name">Name</label>
+          <input name="Name" type="text" id="name" required />
+          <label for="email">Email</label>
+          <input name="Email" type="email" id="email" required />
+          <label for="message">Message</label>
+          <textarea name="Message" id="message" rows="4" required></textarea>
+          <button class="btn" type="submit">Send Message</button>
+        </form>
+      </section>
+    </div>
+    <div class="footer">
+      <img src="logo.png" alt="PinoySoftDev Logo" />
+      <p>&copy; 2026 PinoySoftDev IT Solutions. Proudly Filipino.</h3>
+    </div>
+  </body>
+</html>

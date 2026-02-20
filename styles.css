@@ -1,0 +1,151 @@
+/* Philippine flag inspired color palette */
+:root {
+  --blue: #0033a0;
+  --red: #ce1126;
+  --yellow: #ffd700;
+  --white: #ffffff;
+  --gray: #f4f4f4;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--gray);
+  color: #222;
+}
+
+.header {
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 4px solid var(--blue);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+.logo {
+  height: 64px;
+  margin-right: 1rem;
+}
+.header h1 {
+  color: var(--blue);
+  font-size: 2rem;
+  margin: 0 1rem 0 0;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+.it-solutions {
+  color: var(--red);
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+.header nav a {
+  color: var(--blue);
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.header nav a:hover {
+  color: var(--red);
+}
+
+.hero {
+  background: linear-gradient(90deg, var(--blue) 60%, var(--red) 70%);
+  color: var(--white);
+  padding: 4rem 2rem 3rem 2rem;
+  text-align: center;
+  position: relative;
+}
+.hero-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+.about,
+.services,
+.contact {
+  background: var(--white);
+  margin: 2rem auto;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  padding: 2rem;
+}
+.about h2,
+.services h2,
+.contact h2 {
+  color: var(--blue);
+  margin-top: 0;
+}
+.services ul {
+  list-style: none;
+  padding: 0;
+}
+.services li {
+  background: var(--blue);
+  color: var(--white);
+  margin: 0.5rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contact input,
+.contact textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  resize: vertical;
+}
+.contact button {
+  background: var(--red);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.contact button:hover {
+  background: var(--blue);
+}
+
+.footer {
+  background: var(--blue);
+  color: var(--yellow);
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 700px) {
+  .header,
+  .about,
+  .services,
+  .contact {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .logo {
+    height: 48px;
+  }
+  .hero-content h2 {
+    font-size: 1.5rem;
+  }
+}
