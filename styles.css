@@ -10,6 +10,10 @@
 body {
   margin: 0;
   font-family: "Montserrat", Arial, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
   background: var(--white);
   color: var(--text);
   line-height: 1.6;
@@ -23,12 +27,15 @@ header {
 }
 
 header img {
-  width: 90px;
+  width: 180px;
   margin-bottom: 0.5rem;
 }
 
 header h1 {
   margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-variation-settings: "wdth" 75;
   font-size: 2.2rem;
   color: var(--blue);
   letter-spacing: 2px;
@@ -37,8 +44,11 @@ header h1 {
 header p {
   margin: 0.2rem 0 0 0;
   color: var(--red);
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-variation-settings: "wdth" 75;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
 }
 
 nav {
