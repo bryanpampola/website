@@ -51,7 +51,7 @@
 
         <div class="hero-metrics" aria-label="Business metrics">
           <div class="metric-item">
-            <strong>150+</strong>
+            <strong>20+</strong>
             <span>Projects delivered</span>
           </div>
           <div class="metric-item">
@@ -77,17 +77,20 @@
           <strong>PinoySoftDev IT Solutions</strong> is a Filipino-owned software company
           dedicated to helping local businesses thrive in the digital age. Our team combines
           technical expertise with a deep understanding of the Philippine market, delivering
-          solutions that are reliable, scalable, and proudly Pinoy.
+          solutions that are reliable, scalable, and proudly Pinoy.</br></br>
+          Started in <strong>2014</strong> as <strong>MFJ IT Services</strong>, we have successfully completed over 20+
+          projects for a diverse range of
+          clients, from small startups to established enterprises. Our commitment to quality, innovation, and customer
+          satisfaction has earned us a reputation as a trusted technology partner in the Philippines.
         </p>
-
         <div class="mini-panel" aria-label="Key strengths">
           <div>
             <span>Strategy</span>
-            <strong>Business-first thinking</strong>
+            <strong>Value-Driven Approach</strong>
           </div>
           <div>
-            <span>Execution</span>
-            <strong>Fast, scalable delivery</strong>
+            <span>Industry</span>
+            <strong>Automobile, Logistics, Finance, Manufacturing, Restaurants, Lifestyle</strong>
           </div>
         </div>
       </div>
@@ -164,26 +167,63 @@
         <h2 id="contact-title">Let’s build your next digital advantage</h2>
       </div>
 
-      <form id="contactForm" method="POST"
-        action="https://script.google.com/macros/s/AKfycbz1EOTaklfBa7q0Vj6TbLlv65W5Xb-GAknMlV76gpOg9-7dbFKUlEJ3v-M5fJIm2uuo/exec"
-        class="contact-form">
-        <div class="form-grid">
-          <div>
-            <label for="name">Name</label>
-            <input name="Name" type="text" id="name" required />
+      <div class="contact-layout">
+        <form id="contactForm" method="POST"
+          action="https://script.google.com/macros/s/AKfycbz1EOTaklfBa7q0Vj6TbLlv65W5Xb-GAknMlV76gpOg9-7dbFKUlEJ3v-M5fJIm2uuo/exec"
+          class="contact-form">
+          <div class="form-grid">
+            <div>
+              <label for="name">Name</label>
+              <input name="Name" type="text" id="name" required />
+            </div>
+
+            <div>
+              <label for="email">Email</label>
+              <input name="Email" type="email" id="email" required />
+            </div>
           </div>
 
-          <div>
-            <label for="email">Email</label>
-            <input name="Email" type="email" id="email" required />
+          <label for="message">Message</label>
+          <textarea name="Message" id="message" rows="4" required></textarea>
+
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+
+        <div class="contact-panel">
+          <div class="contact-details" aria-label="Company contact details">
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">⌂</div>
+              <div>
+                <span class="contact-label">Address</span>
+                <p>Marikina City, Metro Manila, Philippines</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">✉</div>
+              <div>
+                <span class="contact-label">Email</span>
+                <p><a href="mailto:contact@pinoysoftdev.com">contact@pinoysoftdev.com</a></p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">☎</div>
+              <div>
+                <span class="contact-label">Mobile</span>
+                <p><a href="tel:+639159268023">+63 915 926 8023</a></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-card" aria-label="Map location">
+            <iframe title="PinoySoftDev location" class="map-frame"
+              src="https://www.google.com/maps?q=Marikina%20City%20Philippines&output=embed" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
         </div>
-
-        <label for="message">Message</label>
-        <textarea name="Message" id="message" rows="4" required></textarea>
-
-        <button type="submit" class="btn btn-primary">Send Message</button>
-      </form>
+      </div>
     </section>
   </main>
 
