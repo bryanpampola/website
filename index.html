@@ -29,35 +29,79 @@
       <a href="#contact">Contact</a>
     </nav>
 
-    <img src="logo-pinoysoftdev.png" alt="PinoySoftDev Logo" class="brand-logo" />
+    <a href="#">
+      <img src="logo-pinoysoftdev.png" alt="PinoySoftDev Logo" class="brand-logo" />
+    </a>
   </header>
 
   <main class="page-shell">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-content">
+        <span class="eyebrow">Digital Growth Partner</span>
         <h1 id="hero-title">Innovation tailored for Filipino businesses.</h1>
         <p>
-          PinoySoftDev delivers world-class software, web, and IT services tailored for
-          Filipino enterprises and startups.
+          We create cutting-edge digital solutions that empower Philippine enterprises to
+          succeed in the global marketplace.
         </p>
-        <a href="#contact" class="btn btn-primary">Get Started</a>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Get Started</a>
+          <a href="#about" class="btn btn-secondary">Learn More</a>
+        </div>
+
+        <div class="hero-metrics" aria-label="Business metrics">
+          <div class="metric-item">
+            <strong>150+</strong>
+            <span>Projects delivered</span>
+          </div>
+          <div class="metric-item">
+            <strong>24/7</strong>
+            <span>Support</span>
+          </div>
+          <div class="metric-item">
+            <strong>100%</strong>
+            <span>Client focus</span>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="about" class="about section-block" aria-labelledby="about-title">
-      <h2 id="about-title">About Us</h2>
-      <p>
-        <strong>PinoySoftDev IT Solutions</strong> is a Filipino-owned software company
-        dedicated to helping local businesses thrive in the digital age. Our team combines
-        technical expertise with a deep understanding of the Philippine market, delivering
-        solutions that are reliable, scalable, and proudly Pinoy.
-      </p>
+      <div class="section-heading">
+        <span class="section-kicker">About</span>
+        <h2 id="about-title">A digital partner built for real business growth</h2>
+      </div>
+
+      <div class="about-grid">
+        <p>
+          <strong>PinoySoftDev IT Solutions</strong> is a Filipino-owned software company
+          dedicated to helping local businesses thrive in the digital age. Our team combines
+          technical expertise with a deep understanding of the Philippine market, delivering
+          solutions that are reliable, scalable, and proudly Pinoy.
+        </p>
+
+        <div class="mini-panel" aria-label="Key strengths">
+          <div>
+            <span>Strategy</span>
+            <strong>Business-first thinking</strong>
+          </div>
+          <div>
+            <span>Execution</span>
+            <strong>Fast, scalable delivery</strong>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="services" class="services section-block" aria-labelledby="services-title">
-      <h2 id="services-title">Our Services</h2>
+      <div class="section-heading">
+        <span class="section-kicker">Services</span>
+        <h2 id="services-title">Technology solutions crafted for modern businesses</h2>
+      </div>
+
       <div class="service-grid">
         <article class="service-card">
+          <div class="card-icon" aria-hidden="true">⚙</div>
           <h3>Systems Development</h3>
           <p>
             Structured process of creating, modifying, or maintaining software and
@@ -68,6 +112,7 @@
         </article>
 
         <article class="service-card">
+          <div class="card-icon" aria-hidden="true">◇</div>
           <h3>Business Processing</h3>
           <p>
             Disciplined and systematic design, modeling, execution, monitoring, and
@@ -76,6 +121,7 @@
         </article>
 
         <article class="service-card">
+          <div class="card-icon" aria-hidden="true">▣</div>
           <h3>Software Architecture</h3>
           <p>
             High-level blueprint defining a system's fundamental structure, components,
@@ -85,6 +131,7 @@
         </article>
 
         <article class="service-card">
+          <div class="card-icon" aria-hidden="true">◎</div>
           <h3>IT Consulting</h3>
           <p>
             Expert advice and solutions to optimize IT infrastructure and processes,
@@ -94,16 +141,43 @@
       </div>
     </section>
 
+    <section class="testimonial-strip" aria-label="Client feedback">
+      <div class="testimonial-card">
+        <p>
+          “PinoySoftDev helped us modernize our operations with a system that actually fits how
+          our team works. The process felt collaborative, strategic, and fast.”
+        </p>
+        <strong>— Operations Lead, Philippine SME</strong>
+      </div>
+      <div class="testimonial-card accent-card">
+        <p>
+          “Their technical guidance gave our business clarity, and the final solution delivered the
+          speed, reliability, and scalability we needed.”
+        </p>
+        <strong>— Founder, Local Startup</strong>
+      </div>
+    </section>
+
     <section id="contact" class="contact section-block" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact Us</h2>
-      <form method="POST"
+      <div class="section-heading">
+        <span class="section-kicker">Contact</span>
+        <h2 id="contact-title">Let’s build your next digital advantage</h2>
+      </div>
+
+      <form id="contactForm" method="POST"
         action="https://script.google.com/macros/s/AKfycbz1EOTaklfBa7q0Vj6TbLlv65W5Xb-GAknMlV76gpOg9-7dbFKUlEJ3v-M5fJIm2uuo/exec"
         class="contact-form">
-        <label for="name">Name</label>
-        <input name="Name" type="text" id="name" required />
+        <div class="form-grid">
+          <div>
+            <label for="name">Name</label>
+            <input name="Name" type="text" id="name" required />
+          </div>
 
-        <label for="email">Email</label>
-        <input name="Email" type="email" id="email" required />
+          <div>
+            <label for="email">Email</label>
+            <input name="Email" type="email" id="email" required />
+          </div>
+        </div>
 
         <label for="message">Message</label>
         <textarea name="Message" id="message" rows="4" required></textarea>
@@ -113,9 +187,15 @@
     </section>
   </main>
 
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+    Thank you for contacting us!
+  </div>
+
   <footer class="site-footer">
     <p>&copy; 2026 PinoySoftDev IT Solutions.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 
 </html>

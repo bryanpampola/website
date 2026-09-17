@@ -1,33 +1,51 @@
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('contactForm');
+  const toast = document.getElementById('toast');
   const googleAppsScriptUrl = 'https://script.google.com/macros/s/AKfycbz1EOTaklfBa7q0Vj6TbLlv65W5Xb-GAknMlV76gpOg9-7dbFKUlEJ3v-M5fJIm2uuo/exec';
 
   if (!form) return;
 
-  htmx.on(form, 'htmx:configRequest', function (event) {
-    event.detail.path = googleAppsScriptUrl;
-  });
+  const button = form.querySelector('button[type="submit"]');
 
-  htmx.on(form, 'htmx:beforeRequest', function () {
-    const button = form.querySelector('button[type="submit"]');
-    if (button) {
-      button.disabled = true;
-      button.textContent = 'Sending...';
-    }
-  });
+  const setButtonState = (isSending) => {
+    if (!button) return;
+    button.disabled = isSending;
+    button.textContent = isSending ? 'Sending...' : 'Send Message';
+  };
 
-  htmx.on(form, 'htmx:afterRequest', function (event) {
-    const button = form.querySelector('button[type="submit"]');
-    if (button) {
-      button.disabled = false;
-      button.textContent = 'Send Message';
-    }
+  const showToast = (message) => {
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.add('show');
+    clearTimeout(showToast.timeoutId);
+    showToast.timeoutId = setTimeout(() => {
+      toast.classList.remove('show');
+    }, 3000);
+  };
 
-    if (event.detail.successful) {
-      alert('Thank you for contacting PinoySoftDev! We will get back to you soon.');
+  form.addEventListener('submit', async function (event) {
+    event.preventDefault();
+    setButtonState(true);
+
+    try {
+      const formData = new FormData(form);
+      const response = await fetch(googleAppsScriptUrl, {
+        method: 'POST',
+        body: formData,
+        mode: 'cors'
+      });
+
+      if (!response.ok) {
+        throw new Error('Request failed');
+      }
+
       form.reset();
-    } else {
-      alert('There was a problem sending your message.');
+      showToast('Thank you for contacting us!');
+    } catch (error) {
+      console.error('Form submission failed:', error);
+      showToast('There was a problem sending your message.');
+    } finally {
+      setButtonState(false);
     }
   });
 });
