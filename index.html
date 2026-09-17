@@ -3,114 +3,119 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="PinoySoftDev IT Solutions delivers innovative software, web, and IT services for businesses in the Philippines." />
   <title>PinoySoftDev IT Solutions</title>
-  <link href="styles.css" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
-  <style>
-
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <header>
-    <div>
-      <h1>PINOYSOFTDEV</h1>
-      <p>IT SOLUTIONS</p>
+  <header class="site-header">
+    <div class="brand-wrap" aria-label="PinoySoftDev brand">
+      <div class="brand-text">
+        <span class="brand-main">PINOYSOFTDEV</span>
+        <span class="brand-sub">IT SOLUTIONS</span>
+      </div>
     </div>
 
-    <img src="logo-pinoysoftdev.png" alt="PinoySoftDev Logo" />
-    <nav>
+    <nav class="main-nav" aria-label="Main navigation">
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
     </nav>
+
+    <img src="logo-pinoysoftdev.png" alt="PinoySoftDev Logo" class="brand-logo" />
   </header>
-  <div class="container">
-    <section class="hero">
+
+  <main class="page-shell">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="hero-content">
-        <h2>Empowering Philippine-Businesses with Innovative IT Solutions</h2>
+        <h1 id="hero-title">Innovation tailored for Filipino businesses.</h1>
         <p>
-          PinoySoftDev delivers world-class software, web, and IT services
-          tailored for Filipino enterprises and startups.
+          PinoySoftDev delivers world-class software, web, and IT services tailored for
+          Filipino enterprises and startups.
         </p>
-        <a href="#contact" class="btn">Get Started</a>
+        <a href="#contact" class="btn btn-primary">Get Started</a>
       </div>
     </section>
-    <section id="about" class="about">
-      <h3>ABOUT US</h3>
+
+    <section id="about" class="about section-block" aria-labelledby="about-title">
+      <h2 id="about-title">About Us</h2>
       <p>
-        <strong>PinoySoftDev IT Solutions</strong> is a Filipino-owned
-        software company dedicated to helping local businesses thrive in the
-        digital age. Our team combines technical expertise with a deep
-        understanding of the Philippine market, delivering solutions that are
-        reliable, scalable, and proudly Pinoy.
+        <strong>PinoySoftDev IT Solutions</strong> is a Filipino-owned software company
+        dedicated to helping local businesses thrive in the digital age. Our team combines
+        technical expertise with a deep understanding of the Philippine market, delivering
+        solutions that are reliable, scalable, and proudly Pinoy.
       </p>
     </section>
-    <section id="services">
-      <h3 style="margin-left: 18px">OUR SERVICES</h3>
-      <div class="services">
-        <div class="service-card">
-          <h4>Systems Development</h4>
+
+    <section id="services" class="services section-block" aria-labelledby="services-title">
+      <h2 id="services-title">Our Services</h2>
+      <div class="service-grid">
+        <article class="service-card">
+          <h3>Systems Development</h3>
           <p>
-            Structured process of creating, modifying, or maintaining software
-            and information systems, involving stages like planning, analysis,
-            design, coding, testing, and maintenance to ensure the final
-            product meets specific business needs.
+            Structured process of creating, modifying, or maintaining software and
+            information systems, involving stages like planning, analysis, design,
+            coding, testing, and maintenance to ensure the final product meets specific
+            business needs.
           </p>
-        </div>
-        <div class="service-card">
-          <h4>Business Processing</h4>
+        </article>
+
+        <article class="service-card">
+          <h3>Business Processing</h3>
           <p>
-            Disciplined and systematically designing, modeling, executing,
-            monitoring, and optimizing business processes for efficiency,
-            consistency, and improvement.
+            Disciplined and systematic design, modeling, execution, monitoring, and
+            optimization of business processes for efficiency, consistency, and improvement.
           </p>
-        </div>
-        <div class="service-card">
-          <h4>Software Architecture</h4>
+        </article>
+
+        <article class="service-card">
+          <h3>Software Architecture</h3>
           <p>
-            High-level blueprint defining a system's fundamental structure,
-            components, their relationships, and guiding principles, ensuring
-            it meets functional (what it does) and non-functional (how well it
-            does it, e.g., scalability, security, performance) requirements,
-            acting as a roadmap for development and evolution
+            High-level blueprint defining a system's fundamental structure, components,
+            relationships, and guiding principles while ensuring scalability, security,
+            and performance requirements are met.
           </p>
-        </div>
-        <div class="service-card">
-          <h4>IT Consulting</h4>
+        </article>
+
+        <article class="service-card">
+          <h3>IT Consulting</h3>
           <p>
-            Expert advice and solutions to optimize your IT infrastructure and
-            processes. We analyze your current setup, identify areas for
-            improvement, and provide strategic recommendations to enhance
-            efficiency, security, and scalability.
+            Expert advice and solutions to optimize IT infrastructure and processes,
+            helping businesses identify opportunities for efficiency, security, and growth.
           </p>
-        </div>
+        </article>
       </div>
     </section>
-    <section id="contact">
-      <h3 style="margin-left: 30px">CONTACT US</h3>
-      <form method="POST" onsubmit="setTimeout(function() { window.location.reload(); }, 4000);"
-        action="https://script.google.com/macros/s/AKfycbz1EOTaklfBa7q0Vj6TbLlv65W5Xb-GAknMlV76gpOg9-7dbFKUlEJ3v-M5fJIm2uuo/exec">
+
+    <section id="contact" class="contact section-block" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact Us</h2>
+      <form method="POST"
+        action="https://script.google.com/macros/s/AKfycbz1EOTaklfBa7q0Vj6TbLlv65W5Xb-GAknMlV76gpOg9-7dbFKUlEJ3v-M5fJIm2uuo/exec"
+        class="contact-form">
         <label for="name">Name</label>
         <input name="Name" type="text" id="name" required />
+
         <label for="email">Email</label>
         <input name="Email" type="email" id="email" required />
+
         <label for="message">Message</label>
         <textarea name="Message" id="message" rows="4" required></textarea>
-        <button class="btn" type="submit">Send Message</button>
+
+        <button type="submit" class="btn btn-primary">Send Message</button>
       </form>
     </section>
-  </div>
-  <div class="footer">
-    <!-- <img src="logo.png" alt="PinoySoftDev Logo" /> -->
+  </main>
+
+  <footer class="site-footer">
     <p>&copy; 2026 PinoySoftDev IT Solutions.</p>
-  </div>
+  </footer>
 </body>
 
 </html>

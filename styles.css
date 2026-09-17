@@ -1,315 +1,337 @@
 :root {
-  --blue: #0050b3;
-  --red: #d72631;
-  --yellow: #ffd600;
-  --white: #fff;
-  --gray: #f7f7f7;
-  --text: #222;
+  --primary: #0050b3;
+  --primary-dark: #003f8f;
+  --accent: #d72631;
+  --accent-soft: #f23b57;
+  --white: #ffffff;
+  --soft-gray: #f5f6fb;
+  --text: #1f2430;
+  --muted: #5e6472;
+  --shadow: rgba(16, 24, 40, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   font-family: "Montserrat", Arial, sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  background: var(--gray);
-  /* background: url('bg-vertical.jpg') no-repeat center center ; */
-  background-size: cover;
+  background: linear-gradient(180deg, #f7f7f9 0%, #eef3fb 100%);
   color: var(--text);
   line-height: 1.6;
 }
 
-header {
-  background: var(--white);
-  padding: 0.75rem;
-  text-align: left;
-  border-bottom: 1px solid var(--gray);
+img {
+  max-width: 100%;
+  display: block;
+}
+
+nav a,
+.btn {
+  transition: all 0.25s ease;
+}
+
+.site-header {
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
-  gap: 2rem;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.03);
 }
 
-header img {
-  width: 100px;
-  margin: -0.5rem;
+.brand-wrap {
+  display: flex;
+  align-items: center;
 }
 
-header h1 {
-  margin: 0;
-  font-family: "Roboto", sans-serif;
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.brand-main {
+  color: var(--primary);
+  font-size: clamp(1.5rem, 1.8vw, 2.2rem);
   font-weight: 900;
-  font-variation-settings: "wdth" 75;
-  font-size: 1.5rem;
-  color: var(--blue);
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
 }
 
-header p {
-  margin: 0.2rem 0 0 0;
-  color: var(--red);
-  font-family: "Roboto", sans-serif;
-  font-weight: 900;
-  font-variation-settings: "wdth" 75;
-  font-size: 0.875rem;
+.brand-sub {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
   letter-spacing: 2px;
-
+  margin-top: 0.25rem;
 }
 
-nav {
-  margin: 1.5rem 0 0 0;
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-nav a {
-  color: var(--blue);
+.main-nav a {
+  color: var(--primary);
   text-decoration: none;
-  margin: 0 1.2rem;
-  font-weight: 500;
-  font-size: 1rem;
-  transition: color 0.2s;
+  font-weight: 600;
+  font-size: 0.96rem;
 }
 
-nav a:hover {
-  color: var(--red);
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  color: var(--accent);
 }
 
-.container {
-  max-width: 900px;
-  margin: 2.5rem auto;
-  padding: 0;
+.brand-logo {
+  width: 90px;
+  height: auto;
+  filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.08));
+}
+
+.page-shell {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 2rem auto 0;
+}
+
+.section-block {
+  margin-bottom: 3rem;
 }
 
 .hero {
   position: relative;
-  text-align: center;
-  padding: 0.875rem;
-  background: var(--gray);
-  border-radius: 1.5rem;
-  margin-bottom: 2.5rem;
-  overflow: hidden;
-  min-height: 420px;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 440px;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, rgba(0, 80, 179, 0.04), rgba(215, 38, 49, 0.08));
+  border-radius: 28px;
+  box-shadow: 0 10px 30px rgba(18, 32, 58, 0.05);
+  overflow: hidden;
 }
 
-.hero-bg {
+.hero::before {
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  /* background:
-          radial-gradient(
-            circle at 70% 30%,
-            rgba(255, 214, 0, 0.08) 0,
-            transparent 60%
-          ),
-          radial-gradient(
-            circle at 30% 70%,
-            rgba(0, 80, 179, 0.1) 0,
-            transparent 70%
-          ),
-          linear-gradient(120deg, rgba(215, 38, 49, 0.08) 0%, transparent 80%); */
-  z-index: 1;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(0, 80, 179, 0.12), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(215, 38, 49, 0.10), transparent 35%);
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
-  max-width: 600px;
-  margin: 0 auto;
+  z-index: 1;
+  max-width: 700px;
+  text-align: center;
 }
 
-.hero-logo {
-  width: 110px;
-  margin-bottom: 1.2rem;
-  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.06));
-}
-
-.hero h2 {
-  font-size: 2.75rem;
-  color: var(--blue);
-  margin-bottom: 1rem;
-  font-weight: 700;
+.hero h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.6rem, 5vw, 5rem);
+  line-height: 1.04;
+  color: var(--primary);
+  letter-spacing: -0.06em;
 }
 
 .hero p {
-  font-size: 1.5rem;
-  color: #444;
-  margin-bottom: 1.7rem;
+  margin: 0 auto 1.8rem;
+  max-width: 640px;
+  font-size: clamp(1.06rem, 2vw, 1.45rem);
+  color: var(--muted);
 }
 
 .btn {
-  background: var(--red);
-  color: var(--white);
-  padding: 0.9rem 2.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  padding: 0.9rem 2rem;
   border: none;
-  border-radius: 2rem;
-  font-size: 1.1rem;
+  border-radius: 999px;
+  text-decoration: none;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 4px 16px rgba(215, 38, 49, 0.1);
-  transition:
-    background 0.2s,
-    box-shadow 0.2s;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
-.btn:hover {
-  background: var(--blue);
-  box-shadow: 0 6px 24px rgba(0, 80, 179, 0.13);
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
 }
 
-section {
-  margin-bottom: 3rem;
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-soft) 100%);
+  color: var(--white);
 }
 
-section h3 {
-  color: var(--blue);
-  font-size: 1.4rem;
-  font-family: "Roboto", sans-serif;
-  font-weight: 900;
-  font-variation-settings: "wdth" 75;
-  transform: uppercase;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  letter-spacing: 1px;
+.about,
+.contact {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.04);
+}
+
+.about h2,
+.services h2,
+.contact h2 {
+  margin: 0 0 1rem;
+  color: var(--primary);
+  font-size: clamp(1.8rem, 2vw, 2.4rem);
+  letter-spacing: -0.04em;
+}
+
+.about p {
+  margin: 0;
+  font-size: 1.04rem;
+  color: var(--text);
+}
+
+.about strong {
+  color: var(--accent);
 }
 
 .services {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: space-between;
+  background: transparent;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
 }
 
 .service-card {
-  background: var(--white);
-  border: 1px solid var(--gray);
-  border-radius: 1rem;
-  flex: 1 1 250px;
-  padding: 2rem 1.2rem;
-  min-width: 220px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-  transition: box-shadow 0.2s;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 18px;
+  padding: 1.5rem 1.2rem;
+  box-shadow: 0 12px 28px rgba(18, 32, 58, 0.04);
 }
 
-.service-card:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
-}
-
-.service-card h4 {
-  color: var(--red);
-  margin-top: 0;
-  margin-bottom: 0.7rem;
+.service-card h3 {
+  margin: 0 0 0.75rem;
+  color: var(--primary);
   font-size: 1.1rem;
 }
 
 .service-card p {
   margin: 0;
-  color: #444;
-  font-size: 1rem;
+  color: var(--muted);
+  font-size: 0.96rem;
 }
 
-.about {
-  background: var(--gray);
-  border-radius: 1rem;
-  padding: 2rem 1.5rem;
+.contact-form {
+  max-width: 560px;
+  display: grid;
+  gap: 0.7rem;
 }
 
-.about strong {
-  color: var(--red);
-}
-
-form {
-  background: var(--white);
-  border: 1px solid var(--gray);
-  border-radius: 1rem;
-  padding: 2rem 1.5rem;
-  max-width: 500px;
-  /* margin: 0 auto; */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-}
-
-form label {
-  display: block;
-  margin-bottom: 0.3rem;
-  color: var(--blue);
+.contact-form label {
+  color: var(--primary);
   font-weight: 600;
 }
 
-form input,
-form textarea {
-  width: 95%;
-  padding: 0.7rem;
-  margin-bottom: 1.2rem;
-  border: 1px solid var(--gray);
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  background: var(--gray);
-  resize: vertical;
+.contact-form input,
+.contact-form textarea {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  background: var(--soft-gray);
+  padding: 0.9rem 1rem;
+  font: inherit;
+  color: var(--text);
 }
 
-form button {
-  width: 100%;
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 3px solid rgba(0, 80, 179, 0.12);
+  border-color: var(--primary);
 }
 
-.footer {
+.contact-form button {
+  margin-top: 0.5rem;
+  width: fit-content;
+}
+
+.site-footer {
+  padding: 1.5rem 1rem 2.5rem;
   text-align: center;
-  padding: 2rem 0 1rem 0;
-  border-top: 1px solid var(--gray);
-  margin-top: 3rem;
-}
-
-.footer img {
-  width: 90px;
-  margin-bottom: 0.5rem;
-}
-
-.footer p {
-  margin: 0;
-  font-size: 0.75rem;
-  font-family: "Roboto", sans-serif;
-  font-weight: 900;
-  font-variation-settings: "wdth" 75;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 @media (max-width: 900px) {
-  .hero {}
-
-  .hero-content h2 {
-    font-size: 2.5rem;
+  .site-header {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
   }
 
-  .hero-content p {
-    font-size: 1.25rem;
+  .main-nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 700px) {
-  .services {
-    flex-direction: column;
-    gap: 1.2rem;
+@media (max-width: 640px) {
+  .site-header {
+    padding: 1rem 1rem 1.2rem;
   }
 
-  .container {
-    padding: 0 0.5rem;
+  .brand-main {
+    font-size: 1.35rem;
+  }
+
+  .brand-sub {
+    letter-spacing: 1px;
+  }
+
+  .page-shell {
+    width: min(100% - 1rem, 1100px);
   }
 
   .hero {
-    min-height: 320px;
+    min-height: 340px;
+    padding: 2rem 1rem;
   }
 
-  .hero-content p {
-    font-size: 1.5rem;
+  .hero h1 {
+    font-size: 2.5rem;
   }
 
-  .hero-logo {
-    width: 70px;
+  .hero p {
+    font-size: 1rem;
   }
 
-  .hero h2 {
-    font-size: 1.3rem;
+  .btn {
+    width: 100%;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form button {
+    width: 100%;
   }
 }
